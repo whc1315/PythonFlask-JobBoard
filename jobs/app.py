@@ -17,7 +17,7 @@ def open_connection():
 
 
 def execute_sql():
-    connection = return open_connection()
+    connection = open_connection()
 
 
 @app.route('/')
