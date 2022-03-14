@@ -16,6 +16,10 @@ def open_connection():
     return connection
 
 
+def execute_sql():
+    connection = return open_connection()
+
+
 @app.route('/')
 @app.route('/jobs')
 def jobs():
