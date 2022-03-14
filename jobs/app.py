@@ -4,13 +4,14 @@ from flask import Flask, render_template, g
 
 PATH = 'db/jobs.sqlite'
 
+
 app = Flask(__name__)
 
 
 def open_connection():
-    getattr(g, '_connection')
-    if connection is None:
-        connection, g._connection = sqlite3.connect(PATH)
+    getattr(g, '_connection', None)
+    if connection == None:
+        connection = g._connection = sqlite3.connect(PATH)
     return getattr(connection)
 
 
