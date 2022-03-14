@@ -12,7 +12,6 @@
     <div class="media-left">
       {% for _ in range(0, review['rating']): %}
       <span class="fa fa-star checked"></span>
-      {% endfor %}
     </div>
     <div class="media-content">
       <div class="content">
@@ -26,10 +25,14 @@
     </div>
   </article>
 </div>
-{# TODO: Remove comment and end for loop {% %} #}
+{% endfor %}
 <div class="columns">
   <div class="column">
-    <a class="button is-info is-pulled-right">Create Review</a>
+    <a
+      href="{{ url_for('review', employer_id=employer['id']) }}"
+      class="button is-info is-pulled-right"
+      >Create Review</a
+    >
   </div>
 </div>
 {% endblock %}
