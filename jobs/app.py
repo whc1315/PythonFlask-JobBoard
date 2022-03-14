@@ -43,6 +43,6 @@ def jobs():
 
 
 @app.route('/job/<job_id>')
-def job():
+def job(job_id):
     execute_sql()
     return render_template('job.html')
